@@ -2,59 +2,28 @@ using System;
 
 namespace Fractions
 {
-    public class Fraction
+    class Program
     {
-        private int _top;
-        private int _bottom;
-
-       
-        public Fraction()
+        static void Main(string[] args)
         {
-            _top = 1;
-            _bottom = 1;
-        }
+            Fraction f1 = new Fraction();
+            Fraction f2 = new Fraction(5);
+            Fraction f3 = new Fraction(6, 7);
 
-               public Fraction(int top)
-        {
-            _top = top;
-            _bottom = 1;
-        }
+            Console.WriteLine(f1.GetFractionString()); 
+            Console.WriteLine(f1.GetDecimalValue());   
 
-                public Fraction(int top, int bottom)
-        {
-            _top = top;
-            _bottom = bottom;
-        }
+            Console.WriteLine(f2.GetFractionString()); 
+            Console.WriteLine(f2.GetDecimalValue());  
 
-                public int GetTop()
-        {
-            return _top;
-        }
+            Console.WriteLine(f3.GetFractionString()); 
+            Console.WriteLine(f3.GetDecimalValue());  
 
-        public void SetTop(int top)
-        {
-            _top = top;
-        }
-
-        public int GetBottom()
-        {
-            return _bottom;
-        }
-
-        public void SetBottom(int bottom)
-        {
-            _bottom = bottom;
-        }
-
-                public string GetFractionString()
-        {
-            return _top + "/" + _bottom;
-        }
-
-        
-        public double GetDecimalValue()
-        {
-            return (double)_top / _bottom;
+            
+            f3.SetTop(3);
+            f3.SetBottom(4);
+            Console.WriteLine(f3.GetFractionString()); 
+            Console.WriteLine(f3.GetDecimalValue());   
         }
     }
 }
